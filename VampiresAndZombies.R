@@ -1,7 +1,7 @@
 library(progress)
 
-members <- read.csv('~/R/ValidateHealth/members.csv')
-conditions <- read.csv('~/R/ValidateHealth/conditions.csv')
+members <- read.csv('~/members.csv')
+conditions <- read.csv('~/conditions.csv')
 
 # calculates vampire score
 vampire_score <- function(has_condition_1, has_condition_2) {
@@ -85,7 +85,7 @@ add_new_algorithm_score <- function(data) {
 }
 
 #
-# 20.
+# Question 1:
 #
 
 data <- setup_data(members, conditions)
@@ -99,7 +99,7 @@ write.csv(
 
 
 #
-# 21.
+# Question 2:
 #
 
 data$current_expected <- data$cur_score * 10000
@@ -109,14 +109,14 @@ summary(data$current_error)
 
 
 #
-# 22.
+# Question 3:
 #
 # Explanation:
 # Insurers in the system consistently pay less than expected: mean of about $20,000
 #
 
 #
-# 23.
+# Question 4:
 #
 # Explanation:
 # Applies a linear regression model detailed in add_new_algorithm_score function.
